@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
               builder: (context, user, child) {
                 if (Provider.of<User>(context, listen: false).name.isNotEmpty) {
                   return FutureStringDisplayBox(
-                    futureString: widgetBookGreetings(user.name),
+                    futureString: widgetbookGreetings(user.name),
                   );
                 }
                 return const SizedBox();
