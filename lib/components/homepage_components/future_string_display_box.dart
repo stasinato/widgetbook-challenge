@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// widget to display a future string
+/// Widget to display a future string
 class FutureStringDisplayBox extends StatelessWidget {
   /// Creates a new instance of [FutureStringDisplayBox].
   const FutureStringDisplayBox({Key? key, required this.futureString})
