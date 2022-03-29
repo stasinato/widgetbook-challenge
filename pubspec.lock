@@ -62,11 +62,23 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
   matcher:
     dependency: transitive
     description:
@@ -94,7 +106,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -141,7 +153,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.8"
+    version: "0.4.9"
   typed_data:
     dependency: transitive
     description:
