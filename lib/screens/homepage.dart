@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:widgetbook_challenge/api/api_helper.dart';
 import 'package:widgetbook_challenge/components/homepage_components/future_string_display_box.dart';
+import 'package:widgetbook_challenge/components/homepage_components/textfield_for_names.dart';
+import 'package:widgetbook_challenge/controller/user_controller.dart';
+import 'package:widgetbook_challenge/models/user.dart';
 
 /// The homepage.
 class Homepage extends StatefulWidget {
@@ -14,24 +17,10 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  late TextEditingController _controller;
-  late String _name;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = TextEditingController();
-    _name = _controller.text;
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final _userController = UserController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.interviewChallenge),
@@ -40,38 +29,27 @@ class _HomepageState extends State<Homepage> {
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
-            TextField(
-              controller: _controller,
-              keyboardType: TextInputType.name,
-              textCapitalization: TextCapitalization.words,
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(
-                  RegExp('^[a-zA-Z ]*'),
-                ),
-              ],
-              decoration: InputDecoration(
-                hintText: AppLocalizations.of(context)!.enterName,
-              ),
-            ),
+            TextFieldForNames(onChangedPassed: _userController.updateName),
             ElevatedButton(
-              onPressed: updateName,
+              onPressed: () => _userController.saveName(
+                context,
+                Provider.of<User>(context, listen: false).name,
+              ),
               child: Text(AppLocalizations.of(context)!.sendData),
             ),
-            if (_name.isNotEmpty)
-              FutureStringDisplayBox(
-                futureString: widgetBookGreetings(_name),
-              )
-            else
-              const SizedBox(),
+            Consumer<User>(
+              builder: (context, user, child) {
+                if (Provider.of<User>(context, listen: false).name.isNotEmpty) {
+                  return FutureStringDisplayBox(
+                    futureString: widgetBookGreetings(user.name),
+                  );
+                }
+                return const SizedBox();
+              },
+            )
           ],
         ),
       ),
     );
-  }
-
-  void updateName() {
-    setState(() {
-      _name = _controller.text.trim();
-    });
   }
 }
