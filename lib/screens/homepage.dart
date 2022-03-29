@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:widgetbook_challenge/api/api_helper.dart';
-import 'package:widgetbook_challenge/components/homepage_components/future_string_display_box.dart';
-import 'package:widgetbook_challenge/components/homepage_components/textfield_for_names.dart';
+import 'package:widgetbook_challenge/components/homepage_components/components.dart';
 import 'package:widgetbook_challenge/controller/user_controller.dart';
 import 'package:widgetbook_challenge/models/user.dart';
 
@@ -26,7 +25,7 @@ class _HomepageState extends State<Homepage> {
         title: Text(AppLocalizations.of(context)!.interviewChallenge),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextFieldForNames(onChangedPassed: _userController.updateName),

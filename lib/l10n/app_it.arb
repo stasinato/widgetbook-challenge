@@ -1,5 +1,7 @@
 {
   "interviewChallenge": "Interview Challenge",
   "enterName": "Inserisci il tuo nome",
-  "sendData": "Invia dati"
+  "sendData": "Invia dati",
+  "error": "Si è verificato un errore, riprova perfavore!"
+
 }

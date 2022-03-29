@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// Widget to display a future string
 class FutureStringDisplayBox extends StatelessWidget {
@@ -16,7 +17,7 @@ class FutureStringDisplayBox extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
-            return const Text('There was an error, retry please!');
+            return Text(AppLocalizations.of(context)!.error);
           } else {
             return Text(snapshot.data.toString());
           }

@@ -1,5 +1,6 @@
 {
   "interviewChallenge": "Interview Challenge",
   "enterName": "Enter your name",
-  "sendData": "Send data"
+  "sendData": "Send data",
+  "error": "There was an error, retry please!"
 }
