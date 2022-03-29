@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-/// Widget to display a future string
+/// Widget to display a future string.
 class FutureStringDisplayBox extends StatelessWidget {
   /// Creates a new instance of [FutureStringDisplayBox].
   const FutureStringDisplayBox({Key? key, required this.futureString})
       : super(key: key);
 
-  /// [futureString] is the future for FutureBuilder
+  /// [futureString] is the future for FutureBuilder.
   final Future<String>? futureString;
 
   @override

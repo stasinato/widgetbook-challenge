@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-/// TextField thought for writing names
+/// TextField thought for writing names.
 class TextFieldForNames extends StatefulWidget {
-  /// Creates a new instance of [TextFieldForNames]
+  /// Creates a new instance of [TextFieldForNames].
   const TextFieldForNames({Key? key, required this.onChangedPassed})
       : super(key: key);
 
   /// [onChangedPassed] is the function triggered on onChanged function
-  /// in TextField
+  /// in TextField.
   final Function(BuildContext context, String newName) onChangedPassed;
 
   @override
