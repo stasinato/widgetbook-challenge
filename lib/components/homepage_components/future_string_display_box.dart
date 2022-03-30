@@ -8,7 +8,7 @@ class FutureStringDisplayBox extends StatelessWidget {
       : super(key: key);
 
   /// [futureString] is the future for FutureBuilder.
-  final Future<String>? futureString;
+  final Future<String> futureString;
 
   @override
   Widget build(BuildContext context) {
