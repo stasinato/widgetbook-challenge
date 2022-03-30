@@ -7,15 +7,10 @@ import 'package:widgetbook_challenge/controller/user_controller.dart';
 import 'package:widgetbook_challenge/models/user.dart';
 
 /// The homepage.
-class Homepage extends StatefulWidget {
+class Homepage extends StatelessWidget {
   /// Creates a new instance of [Homepage].
   const Homepage({Key? key}) : super(key: key);
 
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     final _userController = UserController();
