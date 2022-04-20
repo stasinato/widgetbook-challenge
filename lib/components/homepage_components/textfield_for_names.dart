@@ -10,7 +10,7 @@ class TextFieldForNames extends StatefulWidget {
 
   /// [onChangedPassed] is the function triggered on onChanged function
   /// in TextField.
-  final Function(BuildContext context, String newName) onChangedPassed;
+  final Function(String newName) onChangedPassed;
 
   @override
   State<TextFieldForNames> createState() => _TextFieldForNamesState();
@@ -46,7 +46,7 @@ class _TextFieldForNamesState extends State<TextFieldForNames> {
         hintText: AppLocalizations.of(context)!.enterName,
       ),
       onChanged: (String newName) {
-        widget.onChangedPassed(context, newName);
+        widget.onChangedPassed(newName);
       },
     );
   }

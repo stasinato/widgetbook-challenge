@@ -13,7 +13,7 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _userController = UserController();
+    final _userController = UserController(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +26,6 @@ class Homepage extends StatelessWidget {
             TextFieldForNames(onChangedPassed: _userController.updateName),
             ElevatedButton(
               onPressed: () => _userController.saveName(
-                context,
                 Provider.of<User>(context, listen: false).name,
               ),
               child: Text(AppLocalizations.of(context)!.sendData),
