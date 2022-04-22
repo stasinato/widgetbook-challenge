@@ -13,8 +13,4 @@ class User extends ChangeNotifier {
     name = newName;
     notifyListeners();
   }
-
-  set test(String value) {
-    name = value;
-  }
 }
