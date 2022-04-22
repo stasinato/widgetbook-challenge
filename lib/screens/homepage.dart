@@ -15,7 +15,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _userController = UserController(context);
 
-    /// setName's wrapper - I cannot pass a set function as parameter
+    /// setName wrapper - I cannot pass a set function as parameter
     void setName(String newName) => _userController.name = newName;
 
     return Scaffold(
