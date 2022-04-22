@@ -15,11 +15,11 @@ class UserController {
     Provider.of<User>(context, listen: false).saveName(newName);
   }
 
-  /// [updateName] update [User]'s name.
-  // I don't want to call Provider in UI screen to change user's name
-  // calling updateName is more intuitive
-  // ignore: use_setters_to_change_properties
-  void updateName(String name) {
+  /// get [User]'s [name].
+  String get name => Provider.of<User>(context, listen: false).name;
+
+  /// set [User]'s [name].
+  set name(String name) {
     Provider.of<User>(context, listen: false).name = name;
   }
 }

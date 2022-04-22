@@ -15,6 +15,9 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _userController = UserController(context);
 
+    /// setName's wrapper - I cannot pass a set function as parameter
+    void setName(String newName) => _userController.name = newName;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.interviewChallenge),
@@ -23,7 +26,7 @@ class Homepage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextFieldForNames(onChangedPassed: _userController.updateName),
+            TextFieldForNames(onChangedPassed: setName),
             ElevatedButton(
               onPressed: () => _userController.saveName(
                 Provider.of<User>(context, listen: false).name,
