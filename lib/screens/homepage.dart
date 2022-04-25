@@ -35,7 +35,7 @@ class Homepage extends StatelessWidget {
             ),
             Consumer<User>(
               builder: (context, user, child) {
-                if (Provider.of<User>(context, listen: false).name.isNotEmpty) {
+                if (user.name.isNotEmpty) {
                   return FutureStringDisplayBox(
                     futureString: widgetbookGreetings(user.name),
                   );
